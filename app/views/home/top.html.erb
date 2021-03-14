@@ -1,2 +1,51 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<div class="top-main">
+  <div class="container">
+    <div class="row col-lg-6">
+      <div class="form-fream">
+        <div class="form-area">
+          <p class="form-area-title">Potepan Shareでまだ体験したことのない旅をしよう</p>
+          <lavel for="__">エリア</lavel>
+          <input class="form-control mb-4"></input>
+          <input class="form-control btn-primary mb-4" type="submit" value="探す"　></input>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel-area m-5">
+    <h1 class="section-title">おすすめのエリア</h1>
+  <div class="row">
+    <div class="panel-item col-lg-3 col-6">
+      <span>東京</span>
+      <%= link_to "#" do%>
+        <%= image_tag "img_tokyo.jpg", class: "panel-image" %>
+      <% end %>
+      <div class="shodow"></div>
+    </div>
+    <div class="panel-item col-lg-3 col-6">
+      <span>大阪</span>
+      <%= link_to "#" do%>
+        <%= image_tag "img_osaka.jpg", class: "panel-image" %>
+      <% end %>
+       <div class="shodow"></div>
+    </div>
+    <div class="panel-item col-lg-3 col-6">
+      <span>京都</span>
+      <%= link_to "#" do%>
+        <%= image_tag "img_kyoto.jpg", class: "panel-image" %>
+      <% end %>
+       <div class="shodow"></div>
+    </div>
+    <div class="panel-item col-lg-3 col-6">
+      <span>札幌</span>
+      <%= link_to "#" do%>
+        <%= image_tag "img_sapporo.jpg", class: "panel-image" %>
+      <% end %>
+       <div class="shodow"></div>
+    </div>
+  </div>
+    
+  </div>
+</div>

@@ -287,6 +287,7 @@ form {
 }
 
 .field{
+  width: 100%;
   display: flex;
   margin-bottom: 10px;
 }
@@ -385,6 +386,62 @@ form {
 .btn-outline-secondary {
     color: #6c757d;
     border-color: #6c757d;
+}
+
+/* users_profile */
+
+.col-lg-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+
+.offset-md-3 {
+    flex: 0 0 25%;
+    margin-left: 25%;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.icon-box {
+    text-align: center;
+}
+
+.host-icon {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.required-a::after {
+    content: "必須";
+    color: #fff;
+    background-color: #ff0000a8;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 0 5px;
+}
+
+.update-content label {
+    font-weight: bold;
+}
+
+.col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+.upd-btn{
+  padding: 6px 50px;
 }
 
 /* footer  */

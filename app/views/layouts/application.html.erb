@@ -11,6 +11,7 @@
   </head>
 
   <body>
+   
     <header>
       <div class="header-inner">
         <div class="header-left-nav">
@@ -22,6 +23,7 @@
         </div>
         
         <div class="header-right-nav">
+          <% if user_signed_in? %>
           <div class="nav-item">
             user.name
           </div>
@@ -41,14 +43,23 @@
                 <%= link_to "設定", "#" %>
               </li>
               <li>
-                <%= link_to "ログアウト", "#" %>
+                <%= link_to "ログアウト", destroy_user_session_path,{method: "delete"} %>
               </li>
             </ul>
           </div>
+          <% else %>
+            <div class="nav-item">
+              <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary my-2 mx-3" %>
+              <%= link_to "登録する", new_user_registration_path, class: "btn btn-secondary" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </header>
-    <div class=></div>
+    
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+
     <%= yield %>
     
     <footer>

@@ -1,0 +1,60 @@
+<div class="container-fiuld room-new">
+  <div class="row">
+    <div class="col-lg-2 room-nav room-nav-pc d-lg-block d-none">
+      <ul>
+        <li class="active">
+          <%= link_to "基本情報", rooms_new_path %>
+        </li>
+      </ul>
+    </div>
+    
+    
+    <div class="col-lg-10 room-view">
+      <div class="room-view-box">
+        <%= render "shared/error2", obj: @room %>
+        <%= form_for(@room, url: rooms_create_path, method: :post) do |f|%>
+          <div class="update-content">
+            <div class="row">
+              <h5>ルーム情報</h5>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label "ルーム名", class: "col-md-3 required-a" %>
+              <%= f.text_field :room_name, class: "form-control mb-4 col-md-9", :placeholder => "ルーム名を入力" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label "ルーム紹介", class: "col-md-3 required-a" %>
+              <%= f.text_area :room_introduction, class: "form-control mb-4 col-md-9", :placeholder => "ルーム説明を入力", rows: 5%>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label "料金", class: "col-md-3 required-a" %>
+              <%= f.number_field :fee, class: "form-control mb-4 col-md-9", :placeholder => "一日あたりの料金を入力" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label "住所", class: "col-md-3 required-a" %>
+              <%= f.text_field :address, class: "form-control mb-4 col-md-9", :placeholder => "住所を入力" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label "ルーム画像", class: "col-md-3 required-a" %>
+              <%= f.file_field :room_img, class: "mb-4 col-md-9", :placeholder => "ルーム画像をアップロード" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.submit "登録", class: "col-md-2 btn btn-primary mx-3 upd-btn"%>
+            </div>
+          </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

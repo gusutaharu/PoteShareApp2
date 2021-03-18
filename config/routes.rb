@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   
+  get 'rooms/new' => 'rooms#new'
+  post 'rooms/create'
+  
+  get 'rooms/posts'
+  
+  get 'rooms/:id' => 'rooms#show'
+  
   get 'users/account' => 'users#account'
   
   get 'users/profile' => 'users#profile'

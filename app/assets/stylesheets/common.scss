@@ -56,6 +56,10 @@ header{
     padding-right: 30px;
 }
 
+.nav-item p{
+  color: white;
+}
+
 .header-sharch{
   display: block;
   float: left;
@@ -442,6 +446,119 @@ textarea.form-control {
 
 .upd-btn{
   padding: 6px 50px;
+}
+
+/* room_new  */
+
+.room-new .room-nav-pc {
+    height: 100vh;
+}
+
+.room-new .room-nav {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 15px;
+}
+
+.d-lg-block {
+    display: block;
+}
+
+.room-new .room-nav li {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.room-view {
+    background-color: #F6F8F9;
+    border-left: 2px solid #e2e2e2;
+}
+
+.room-view-box {
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #eaedef;
+    margin: 50px auto;
+}
+
+/* rooms_posts */
+
+.room-posts, .reservations {
+    max-width: 100vw;
+    padding: 30px 60px;
+}
+
+.pb-4, .py-4 {
+    padding-bottom: 1.5rem;
+}
+
+.room-posts table, .reservations table {
+    min-width: 800px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.room-posts table thead tr{
+    border-top: 1px solid #eaedef;
+    border-bottom: 1px solid #eaedef;
+}
+
+.room-posts table thead th{
+    padding: 8px 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.room-posts table tbody a{
+    color: #4a90e2;
+    text-decoration: underline;
+}
+
+.room-posts-image{
+    width: 240px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.room-posts table tbody .posts-name{
+    font-size: 18px;
+    font-weight: bold;
+    color: #909090;
+}
+
+.room-posts table tbody td{
+    padding: 10px;
+}
+
+.room-posts table tbody .posts-content{
+    max-width: 400px;
+}
+
+.price-icon::before {
+    content: "￥";
+    padding-right: 3px;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+/* room_show */
+
+.col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+.room-show-image{
+    width: 100%;
+    object-fit: cover;
+}
+
+.room-show-detile{
+    display: flex;
+    align-items: center;
 }
 
 /* footer  */

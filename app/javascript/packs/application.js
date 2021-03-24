@@ -8,6 +8,9 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+require("jquery")
+require("menu.js")
+
 Rails.start()
 
 ActiveStorage.start()

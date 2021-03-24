@@ -42,7 +42,7 @@
             <% if current_user.icon_img?  %>
               <%= image_tag current_user.icon_img.url , class: "mx-3 p-1 host-icon nav-trigger" %>
             <% else %>
-            <p>メニュー</p>
+            <p class="nav-trigger">メニュー</p>
             <% end %>
             <ul class="header-nav-menu">
               <li>

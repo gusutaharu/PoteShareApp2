@@ -8,10 +8,8 @@
       </ul>
     </div>
     
-    
     <div class="col-lg-10 room-view">
       <div class="room-view-box">
-        <%= render "shared/error2", obj: @room %>
         <%= form_for(@room, url: rooms_create_path, method: :post) do |f|%>
           <div class="update-content">
             <div class="row">

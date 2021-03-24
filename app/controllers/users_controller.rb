@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+ 
   
   def account
     
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
   def profile_update
     @user = User.find(current_user.id)
     if @user.update(user_params)
+      flash[:notice] = "Profile was successfully updated."
     redirect_to '/users/profile'
     else
       render 'users/profile'

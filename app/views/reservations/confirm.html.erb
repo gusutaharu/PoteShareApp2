@@ -1,0 +1,51 @@
+<div class="container reservations-new">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="reservations-new-nav">
+        <h4 class="reservations-new-check-content">予約確認</h4>
+        <h5 class=price-icon>
+          <%= form_for @reservation, url: reservations_create_path do |f|%>
+          <%= @reservation.room.fee %> / 日
+        </h5>
+        <div class="reservations-new-date-select">
+          <% require 'date' %>
+          
+            <%= f.hidden_field :start_date %>
+            <%= f.hidden_field :end_date %>
+            <%= f.hidden_field :number_of_people %>
+            <%= f.hidden_field :room_id %>
+            
+            <%= f.label "開始日" %>
+            <p class="form-control mb-4 add_form">
+              <%= @reservation.start_date %>
+            </p>
+            <%= f.label "終了日" %>
+            <p class="form-control mb-4 add_form">
+              <%= @reservation.end_date %>
+            </p>
+            <h6 class="reservations-new-check-content">
+              使用日数 :
+              <% use_day = (@reservation.end_date - @reservation.start_date)/86000 %>
+              <%= use_day.to_i %>
+              日
+            </h6>
+            <h6 class="reservations-new-check-content" >
+              人数 :
+              <%= @reservation.number_of_people %>
+            </h6>
+            <%= f.label "合計金額" %>
+            <p class="form-control mb-4 add_form">
+              <%= @reservation.room.fee*use_day.to_i*@reservation.number_of_people %>
+            </p>
+            <p class="reservations-new-check-content">
+              上記内容でよろしければ「予約を確定」を押してください
+            </p>
+            <%= f.submit "予約を確定",class: "btn btn-primary form-control my-3" %>
+            <%= link_to "ルーム詳細に戻る","/rooms/#{@room.id}", class: "btn btn-secondary form-control" %>
+            
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

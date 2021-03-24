@@ -5,8 +5,10 @@
         <div class="form-area">
           <p class="form-area-title">Potepan Shareでまだ体験したことのない旅をしよう</p>
           <lavel for="__">エリア</lavel>
-          <input class="form-control mb-4"></input>
-          <input class="form-control btn-primary mb-4" type="submit" value="探す"　></input>
+          <%= form_tag(rooms_search_path,:method => 'get') do %>
+            <%= text_field_tag :search, "東京", class: "form-control mb-4",:placeholder => "東京" %>
+            <%= submit_tag '探す', :name => nil, class: "form-control btn-primary mb-4"%>
+          <% end %>
         </div>
       </div>
     </div>
@@ -19,28 +21,28 @@
   <div class="row">
     <div class="panel-item col-lg-3 col-6">
       <span>東京</span>
-      <%= link_to "#" do%>
+      <%= link_to "rooms/search?search=東京" do%>
         <%= image_tag "img_tokyo.jpg", class: "panel-image" %>
       <% end %>
       <div class="shodow"></div>
     </div>
     <div class="panel-item col-lg-3 col-6">
       <span>大阪</span>
-      <%= link_to "#" do%>
+      <%= link_to "/rooms/search?search=大阪" do%>
         <%= image_tag "img_osaka.jpg", class: "panel-image" %>
       <% end %>
        <div class="shodow"></div>
     </div>
     <div class="panel-item col-lg-3 col-6">
       <span>京都</span>
-      <%= link_to "#" do%>
+      <%= link_to "/rooms/search?search=京都" do%>
         <%= image_tag "img_kyoto.jpg", class: "panel-image" %>
       <% end %>
        <div class="shodow"></div>
     </div>
     <div class="panel-item col-lg-3 col-6">
       <span>札幌</span>
-      <%= link_to "#" do%>
+      <%= link_to "/rooms/search?search=札幌" do%>
         <%= image_tag "img_sapporo.jpg", class: "panel-image" %>
       <% end %>
        <div class="shodow"></div>

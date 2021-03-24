@@ -1,5 +1,9 @@
 class RoomsController < ApplicationController
   
+  
+  
+  
+  
   def posts
     @rooms = Room.where(user_id: current_user.id)
   end
@@ -8,6 +12,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @user = User.find(@room.user_id)
+    @reservation = Reservation.new
   end
   
   def new

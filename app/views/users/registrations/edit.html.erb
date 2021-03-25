@@ -33,8 +33,8 @@
 
     <div class="u-e">
       <div class="form-grop">
-        <%= f.label "現在のパスワード",for: "user_current_pasword" %><br />
-        <%= f.password_field :current_password, autocomplete: "current-password",class: "form-control",:placeholder => "現在のパスワードを入力" %>
+        <%= f.label "現在のパスワード" %><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control",:placeholder => "現在のパスワードを入力", name: "user[current_password]"%>
       </div>
     </div>
 

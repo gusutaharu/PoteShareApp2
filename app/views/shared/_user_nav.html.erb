@@ -1,9 +1,9 @@
 <div class="col-lg-2 user-nav user-nav-pc d-lg-block d-none">
   <ul>
-    <li class="active">
+    <li class="<%= "active" if request.path ==  users_account_path %>">
       <%= link_to "アカウント", "/users/account" %>
     </li>
-    <li>
+    <li class="<%= "active" if request.path ==  users_profile_path %>">
       <%= link_to "プロフィール", "/users/profile" %>
     </li>
   </ul>

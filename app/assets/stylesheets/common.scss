@@ -1,3 +1,44 @@
+/* margin padding reset */
+body, div, p,  ul, ol, li, dl, dt, dd, table, th ,td, img, figure,
+h1, h2, h3 ,h4 ,h5, h6, form, select
+{ margin: 0; padding: 0; }
+
+html
+{ -webkit-text-size-adjust: 100%; }
+
+body
+{ -webkit-font-smoothing: antialiased; }
+
+/* remove list point mark */
+ul, ol
+{ list-style: none; }
+
+/* remove border & off descender */
+img
+{ border: 0; vertical-align: middle; }
+
+/* remove descender */
+svg, input, select, textarea, label
+{ vertical-align: middle; }
+
+/* set collapse */
+table
+{ border-collapse: collapse; }
+
+/* break word for all elements */
+*, *:before, *:after
+{ word-break: break-all; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+pre
+{ white-space: pre-wrap; }
+
+address
+{ font-style: normal; }
+
+p
+{ line-height: 1.5; }
+
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
@@ -373,7 +414,7 @@ form {
 
 .user .user-nav {
     width: 100%;
-    padding: 30px 15px;
+    padding: 30px 15px 30px 50px;
 }
 
 .d-lg-block {
@@ -392,6 +433,10 @@ form {
 
 .active {
     border-right: 3px solid #4a90e2;
+}
+
+.active a{
+    color: #4a90e2;
 }
 
 .user-nav li {
@@ -450,6 +495,7 @@ form {
 .col-lg-10 {
     flex: 0 0 83.333333%;
     max-width: 83.333333%;
+    
 }
 
 

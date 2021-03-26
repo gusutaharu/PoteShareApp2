@@ -3,13 +3,11 @@
     <div class="col-6 offset-3">
       <div class="reservations-new-nav">
         <h4 class="reservations-new-check-content">予約確認</h4>
-        <h5 class=price-icon>
           <%= form_for @reservation, url: reservations_create_path do |f|%>
-          <%= @reservation.room.fee %> / 日
-        </h5>
+          <h5 class=price-icon>
+            <%= @reservation.room.fee %> / 日
+          </h5>
         <div class="reservations-new-date-select">
-          <% require 'date' %>
-          
             <%= f.hidden_field :start_date %>
             <%= f.hidden_field :end_date %>
             <%= f.hidden_field :number_of_people %>

@@ -2,7 +2,6 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :room
   
-  
   validates :user_id, presence: true
   validates :room_id, presence: true
   validates :start_date, presence: true
@@ -12,7 +11,5 @@ class Reservation < ApplicationRecord
   def room
     return Room.find(self.room_id)
   end
-  
-  
   
 end

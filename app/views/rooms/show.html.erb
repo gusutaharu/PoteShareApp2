@@ -1,5 +1,4 @@
 <div class="room-show container">
-  <%= render "shared/error2", obj: @reservation %>
   <div class="row">
     <div class="col-md-8">
       <%= image_tag @room.room_img.url,class:"room-show-image"%>
@@ -36,7 +35,11 @@
             <%= f.label :number_of_people,"人数"%>
             <%= f.number_field :number_of_people, class: "form-control mb-4"  %>
             <%= f.hidden_field :room_id, :value => @room.id %>
-            <%= f.submit "予約する", class: "btn btn-primary form-control" %>
+            <% if user_signed_in? %>
+              <%= f.submit "予約する", class: "btn btn-primary form-control" %>
+            <% else %>
+              <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary form-control"  %>
+            <% end %>
           <% end %>
         </div>
       </div>

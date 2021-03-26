@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
  
+ before_action :authenticate_user!, only: [:index,:confirm,:create]
   
   
   def index
@@ -16,7 +17,17 @@ class ReservationsController < ApplicationController
      @reservation = current_user.reservations.build(reservation_params)
      @room = Room.find(@reservation.room_id)
      @user = User.find(@room.user_id)
-     render "rooms/show" if @reservation.invalid?
+     
+     if @reservation.invalid?
+       redirect_to "/rooms/#{@room.id}"
+     elsif @reservation.start_date < Date.today
+       flash[:alert] = "過去の日付は使用できません"
+       redirect_to "/rooms/#{@room.id}"
+     elsif @reservation.end_date < @reservation.start_date
+       flash[:alert] = "終了日は開始日より後にしてください"
+       redirect_to "/rooms/#{@room.id}"
+     end
+     
   end
   
   
@@ -27,15 +38,8 @@ class ReservationsController < ApplicationController
       flash[:notice] = "Reservation was successfully created."
       redirect_to "/reservations/#{@reservation.id}"
     else
-      
       render "rooms/show"
     end
-  end
-  
-  def destroy
-    @reservations = Reservation.all
-    @reservations.destroy
-    @reservations.save
   end
 
 
